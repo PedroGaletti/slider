@@ -1,0 +1,20 @@
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Lato", sans-serif, Verdana, Impact;
+}
+
+/*INCIO SLIDES*/
+.slide {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.img-slide{
+    display:none;
+}
+/*FIM SLIDES*/
