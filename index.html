@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,
-     maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+	<head>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+		/>
+		<meta charset="UTF-8" />
+		<title>Slider</title>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <script type="text/javascript" src="script.js"></script>
-</head>
+		<script type="text/javascript">
+			window.onload = function () {
+				Slides()
+			}
 
-<body id="body">
+			var count = 0
+			function Slides() {
+				var slides = document.getElementsByClassName('img-slide')
 
-        <div id="telaToda">
-            <div id="slide" class="slide">
-                <img src="imagens/imagem_1.jpg" class="img-slide" style="width:100%; display:none">
-                <img src="imagens/imagem_2.jpg" class="img-slide" style="width:100%; display:none" >
-                <img src="imagens/imagem_3.jpg" class="img-slide" style="width:100%; display:none">
-            </div>
+				for (var i = 0; i < slides.length; i++) {
+					slides[i].style.display = 'none'
+				}
 
-        </div>
+				count++
 
+				if (count > slides.length) count = 1
 
+				slides[count - 1].style.display = 'block'
 
-</body>
+				setTimeout(Slides, 2000)
+			}
+		</script>
+		<style>
+			*,
+			*::before,
+			*::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Lato', sans-serif, Verdana, Impact;
+			}
+
+			.slide {
+				max-width: 1000px;
+				position: relative;
+				margin: auto;
+			}
+
+			.img-slide {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="slide">
+			<img src="assets/img_one.jpg" class="img-slide" style="width: 100%; display: none" />
+			<img src="assets/img_two.jpg" class="img-slide" style="width: 100%; display: none" />
+			<img src="assets/img_three.jpg" class="img-slide" style="width: 100%; display: none" />
+		</div>
+	</body>
 </html>
