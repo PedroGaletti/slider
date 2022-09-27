@@ -9,15 +9,14 @@
 		<title>Slider</title>
 
 		<script type="text/javascript">
-			window.onload = function () {
-				Slides()
-			}
+			window.onload = () => Slides()
 
-			var count = 0
+			let count = 0
+
 			function Slides() {
-				var slides = document.getElementsByClassName('img-slide')
+				const slides = document.getElementsByClassName('img-slide')
 
-				for (var i = 0; i < slides.length; i++) {
+				for (let i = 0; i < slides.length; i++) {
 					slides[i].style.display = 'none'
 				}
 
